@@ -1,0 +1,20 @@
+---
+name: "clubstatus"
+version: "1.0.0"
+slug: "clubstatus"
+description: "club.entropia.de status site - implemented in homeassistant supervisor via addon"
+url: https://github.com/entropia/clubstatus-homeassistant-addon.git
+webui: https://[HOST]:[PORT:5000]
+init: false
+ports:
+  5000/tcp: 5000
+arch:
+  - i386
+  - amd64
+  - armv7
+  - armhf
+environment:
+  DEBUG: false
+  MQTT_TOPIC: "/public/eden/clubstatus"
+  MQTT_BROKER: homeassistant
+  MQTT_BROKER_PORT: 1883
