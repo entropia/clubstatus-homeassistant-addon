@@ -1,3 +1,1 @@
-# openspeedtest addon for Homeassistant OS
-
-## https://openspeedtest.com/
+# club.entropia.de status site - implemented in homeassistant supervisor via addon
