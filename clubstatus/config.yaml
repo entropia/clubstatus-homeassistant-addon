@@ -14,7 +14,7 @@ arch:
   - armv7
   - armhf
 environment:
-  DEBUG: false
+  DEBUG: "false"
   MQTT_TOPIC: "/public/eden/clubstatus"
-  MQTT_BROKER: homeassistant
-  MQTT_BROKER_PORT: 1883
+  MQTT_BROKER: "homeassistant"
+  MQTT_BROKER_PORT: "1883"
