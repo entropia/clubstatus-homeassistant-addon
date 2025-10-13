@@ -1,6 +1,1 @@
 ---
-build_from:
-  i386: python:3.14.0-slim
-  amd64: python:3.14.0-slim
-  armv7: python:3.14.0-slim
-  armhf: python:3.14.0-slim
