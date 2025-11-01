@@ -146,6 +146,6 @@ def human():
 
 @app.route("/spaceapi")
 def spaceapi():
-    return json.dumps(clubstatus.spaceapi_output)
+    return Response(json.dumps(clubstatus.spaceapi_output),mimetype='application/json')
 
 app.run(host='0.0.0.0', port=5000)
