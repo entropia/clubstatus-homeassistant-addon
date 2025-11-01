@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # coding=utf-8
 import paho.mqtt.client as mqtt
-from flask import Flask, Response
+from flask import Flask, Response, jsonify
 import json, time, os, threading
 
 debug = bool(os.getenv('DEBUG'))
@@ -146,6 +146,14 @@ def human():
 
 @app.route("/spaceapi")
 def spaceapi():
-    return json.dumps(clubstatus.spaceapi_output)
+    # Adhere to headers recommended by https://spaceapi.io/provide-an-endpoint/#http-and-cors
+    return (
+        jsonify(clubstatus.spaceapi_output),
+        200,
+        {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json; charset=utf-8",
+        }
+    )
 
 app.run(host='0.0.0.0', port=5000)
