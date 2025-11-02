@@ -42,16 +42,25 @@ def on_message(client, userdata, msg):
         clubstatus. spaceapi_html_status = "Unbekannt"
 
     clubstatus.spaceapi_output = {
-        "api_compatibility": [ "14" ],
+        "api_compatibility": ["14", "15"],
+        "space": "Entropia",
+        "logo": "https://entropia.de/wiki/images/e/ed/Teebeutel1_noev.png",
+        "url": "https://entropia.de/",
+        "location": {
+            "address": "Entropia e.V., Gewerbehof Steinstraße 23, 76133 Karlsruhe, Germany, Planet Earth",
+            "lat": 49.0067,
+            "lon": 8.407438,
+            "timezone": "Europe/Berlin",
+            "country_code": "DE"
+        },
         "contact": {
             "email": "info@entropia.de",
             "irc": "irc://irc.hackint.eu/#entropia",
-            "issue_mail": "spaceapi@entropia.de",
+            "issue_mail": "oops@lists.entropia.de",
             "mastodon": "@entropia@chaos.social",
             "matrix": "#entropia:entropia.de",
             "ml": "news@list.entropia.de",
-            "phone": "+49 721 5604732",
-            "twitter": "@entropiagpn"
+            "phone": "+49 721 5604732"
         },
         "feeds": {
             "wiki": {
@@ -62,13 +71,6 @@ def on_message(client, userdata, msg):
                 "type": "html",
                 "url": "https://entropia.de/Vorlage:Termine"
             }
-        },
-        "location": {
-            "address": ("Entropia e.V., Gewerbehof, "
-                        "Steinstraße 23, 76133 Karlsruhe, Germany"),
-            "lat": 49.0067,
-            "lon": 8.407438,
-            "timezone": "Europe/Berlin"
         },
         "membership_plans": [
             {
@@ -98,9 +100,15 @@ def on_message(client, userdata, msg):
                 "description": "Fördermitglieder gem. https://entropia.de/Satzung_des_Vereins_Entropia_e.V.#Beitragsordnung",
                 "name": "Sustaining Membership",
                 "value": 6,
+            },
+            {
+                "billing_interval": "monthly",
+                "currency": "EUR",
+                "description": "Ehrenmitglieder gem. https://entropia.de/Satzung_des_Vereins_Entropia_e.V.#Beitragsordnung",
+                "name": "Honorary Membership",
+                "value": 0,
             }
         ],
-        "logo": "https://entropia.de/wiki/images/e/ed/Teebeutel1_noev.png",
         "spacefed": {
             "spacenet": False,
             "spacesaml": False
@@ -111,10 +119,13 @@ def on_message(client, userdata, msg):
                 "open": "https://entropia.de/wiki/images/7/7a/Clubstatus_offen.png"
             },
             "lastchange": timestamp,
-            "open": clubstatus.spaceapi_status
+            "open": clubstatus.spaceapi_status,
+            "message": clubstatus.spaceapi_html_status
         },
-        "space": "Entropia",
-        "url": "https://entropia.de/"
+        "projects": [
+            "https://entropia.de/Kategorie:Projekte",
+            "https://gulas.ch/"
+        ]
     }
 
     clubstatus.spaceapi_human_output = ("<!-- this is not meant to be machine-readable. please use /spaceapi or /status.json -->"

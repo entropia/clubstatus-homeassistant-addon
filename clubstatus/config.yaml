@@ -1,6 +1,6 @@
 ---
 name: "clubstatus"
-version: "1.0.2"
+version: "1.0.3"
 slug: "clubstatus"
 description: "club.entropia.de status site - implemented in homeassistant supervisor via addon"
 url: https://github.com/entropia/clubstatus-homeassistant-addon.git
